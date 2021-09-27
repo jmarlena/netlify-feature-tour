@@ -14,8 +14,8 @@ export default function FunctionsPage() {
             <code>deploy-preview-test</code>.
           </li>
           <li>
-            Edit <code>pages/deploy-previews.js</code> to edit the headline "Try
-            out deploy previews." so it reads, "This is a deploy preview!"
+            Edit <code>pages/deploy-previews.js</code> to edit the headline “Try
+            out deploy previews.” so it reads, “This is a deploy preview!”
           </li>
           <li>Save the change, commit it, and push it to your GitHub repo.</li>
           <li>
