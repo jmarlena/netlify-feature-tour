@@ -1,0 +1,72 @@
+---
+import { Code } from 'astro/components';
+import Layout from '../components/layout.astro';
+import FunctionTester from '../components/function-tester.jsx';
+
+const functionCode = `
+exports.handler = () => {
+  return {
+    statusCode: 200,
+    body: 'hello world!',
+  };
+};
+`.trim();
+---
+
+<style>
+:global(.astro-code) {
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+:global(.error) {
+  background: hsl(0 85% 92%);
+  border: 1px solid hsl(0 85% 85%);
+  border-radius: 0.25rem;
+  color: hsl(0 55% 45%);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+:global(.error) p {
+  margin: 0;
+}
+
+:global(.error) pre {
+  background: #fdfdfd;
+  color: hsl(0 25% 40%);
+  overflow-x: scroll;
+  padding: 0.25rem 0.5rem;
+}
+
+:global(.button) {
+  background: var(--primary);
+  border: 0;
+  border-radius: 4px;
+  color: var(--button);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: max-content;
+}
+</style>
+
+<Layout
+  title="Netlify Functions"
+  description="Serverless functions are superpowers for web developers! Securely handle server-like requirements at any scale with no provisioning, scaling, or ops overhead."
+>
+  <main>
+    <FunctionTester client:visible>
+      <Code code={functionCode} lang="js" />
+    </FunctionTester>
+    <p>
+      <a href="https://docs.netlify.com/functions/configure-and-deploy/">
+        Learn about serverless functions in the Netlify docs.
+      </a>
+    </p>
+  </main>
+</Layout>
