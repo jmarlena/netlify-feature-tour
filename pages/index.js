@@ -31,7 +31,7 @@ export default function Home() {
             one-click operation to roll back to a previous version of the site.{' '}
             <strong>Instant disaster recovery!</strong>
           </p>
-          <Link href="#instant-rollbacks">
+          <Link href="/instant-rollbacks">
             <a className={styles.button}>
               Learn more{' '}
               <span className="sr-only">about Instant Rollbacks</span>
@@ -66,7 +66,7 @@ export default function Home() {
               events.
             </strong>
           </p>
-          <Link href="#netlify-forms">
+          <Link href="/netlify-forms">
             <a className={styles.button}>
               Learn more <span className="sr-only">about Netlify Forms</span>
             </a>

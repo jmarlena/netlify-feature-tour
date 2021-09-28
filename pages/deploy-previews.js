@@ -31,6 +31,11 @@ export default function FunctionsPage() {
             changes!
           </li>
         </ol>
+        <p>
+          <a href="https://docs.netlify.com/site-deploys/deploy-previews/">
+            Learn about deploy previews in the Netlify docs.
+          </a>
+        </p>
       </main>
     </Layout>
   );

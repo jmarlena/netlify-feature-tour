@@ -85,6 +85,11 @@ run \`netlify dev\` in your CLI.`,
         ) : (
           <ExerciseStart handleClick={handleClick} output={output} />
         )}
+        <p>
+          <a href="https://docs.netlify.com/functions/configure-and-deploy/">
+            Learn about serverless functions in the Netlify docs.
+          </a>
+        </p>
       </main>
     </Layout>
   );
