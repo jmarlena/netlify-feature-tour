@@ -1,0 +1,93 @@
+---
+import Layout from '../components/layout.astro';
+---
+
+<style>
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 35ch;
+}
+
+.form label {
+  color: var(--heading);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+.form input,
+.form textarea {
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.form textarea {
+  height: 100px;
+}
+
+.button {
+  background: var(--primary);
+  border: 0;
+  border-radius: 4px;
+  color: var(--button);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: max-content;
+}
+
+.heading,
+.docs {
+  text-align: center;
+}
+</style>
+
+<Layout
+  title="Netlify Forms"
+  description="Turn any HTML form into a functional form that can receive submissions with a single line of code."
+>
+  <main>
+    <h2 class="heading">Make this form functional</h2>
+
+    <form
+      class="form"
+      method="POST"
+      name="contact"
+      data-netlify="true"
+      action="/success"
+    >
+      <label htmlFor="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <label htmlFor="email">Email</label>
+      <input type="email" id="email" name="email" />
+
+      <label htmlFor="message">Message</label>
+      <textarea name="message"></textarea>
+
+      <button type="submit" class="button">
+        Send
+      </button>
+    </form>
+    <p class="docs">
+      <a href="https://docs.netlify.com/forms/setup/">
+        Learn about Netlify Forms in the docs.
+      </a>
+    </p>
+  </main>
+</Layout>

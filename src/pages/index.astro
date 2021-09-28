@@ -1,0 +1,119 @@
+---
+import Layout from '../components/layout.astro';
+---
+
+<style>
+.steps {
+  background: var(--light);
+  border-bottom: 1px solid var(--lightBorder);
+  border-top: 1px solid var(--lightBorder);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: min(90vw, 250px);
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 2rem 5vw;
+  width: 100vw;
+}
+
+@media (min-width: 550px) {
+  .steps {
+    grid-template-columns: repeat(2, min(calc(50% - 1rem), 250px));
+  }
+}
+
+@media (min-width: 1050px) {
+  .steps {
+    grid-template-columns: repeat(4, min(calc(25% - 1.5rem), 250px));
+  }
+}
+
+.step {
+  background: var(--white);
+  border: 1px solid var(--lightBorder);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: left;
+}
+
+.stepHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.button {
+  background: var(--primary);
+  border-radius: 4px;
+  color: var(--button);
+  display: inline-block;
+  font-weight: 600;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: max-content;
+}
+</style>
+
+<Layout
+  title="Netlify Feature Tour"
+  description="This is a small site to show the most powerful features of Netlify quickly!"
+  home
+>
+  <main class="steps">
+    <section class="step">
+      <h2 class="stepHeading">Deploy Previews</h2>
+      <p>
+        Every pull request is automatically built in an
+        identical-to-production environment for
+        <strong>painless QA, feedback, and review.</strong>
+      </p>
+      <a href="/deploy-previews" class="button">
+        Learn more <span class="sr-only">about Deploy Previews</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Instant Rollbacks</h2>
+      <p>
+        Confidently ship to production with the knowledge that it’s a
+        one-click operation to roll back to a previous version of the site.
+        <strong>Instant disaster recovery!</strong>
+      </p>
+      <a href="/instant-rollbacks" class="button">
+        Learn more
+        <span class="sr-only">about Instant Rollbacks</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Netlify Functions</h2>
+      <p>
+        <strong>Serverless functions are superpowers for web developers!</strong>
+        Securely handle server-like requirements at any scale with no
+        provisioning, scaling, or ops overhead.
+      </p>
+      <a href="/functions" class="button">
+      Learn more
+      <span class="sr-only">about Netlify Functions</span>
+      </a>
+    </section>
+
+    <section class="step">
+      <h2 class="stepHeading">Netlify Forms</h2>
+      <p>
+        Handle user input with a single line of code. Netlify Forms allow
+        any HTML form to
+        <strong>
+            accept submissions, send notification emails, and trigger custom events.
+        </strong>
+      </p>
+      <a href="/netlify-forms" class="button">
+        Learn more <span class="sr-only">about Netlify Forms</span>
+      </a>
+    </section>
+  </main>
+</Layout>

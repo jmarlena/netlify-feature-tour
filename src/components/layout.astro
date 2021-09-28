@@ -1,0 +1,163 @@
+---
+const { title, description, home = false } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon-16x16.png"
+  />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#139cab" />
+  <meta name="msapplication-TileColor" content="#5cebdf" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>{title}</title>
+
+  <style global>
+    :root {
+      --heading: #151a1e;
+      --text: #33373b;
+      --text-muted: #676c70;
+      --primary: #5cebdf;
+      --button: #054861;
+      --lightBorder: #d2e0fe;
+      --light: #e5edff;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      font-size: 18px;
+      line-height: 1.45;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 5rem 0 4rem;
+    }
+
+    main {
+      background: var(--light);
+      border-bottom: 1px solid var(--lightBorder);
+      border-top: 1px solid var(--lightBorder);
+      margin-bottom: 2rem;
+      margin-top: 3rem;
+      padding: 2rem max(5vw, 50vw - 60ch / 2);
+      width: 100vw;
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+  </style>
+
+  <style>
+    .container,
+    .footer {
+      margin: 0 auto;
+      text-align: center;
+      width: min(90vw, 900px);
+    }
+
+    .heading {
+      color: var(--heading);
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .footer {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 4rem;
+    }
+
+    .footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer a:focus,
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .heart {
+      display: inline-block;
+      vertical-align: top;
+      width: 1.1rem;
+    }
+
+    .heart img {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="container">
+    <h1 class="heading">{title}</h1>
+
+    <p class="description">{description}</p>
+
+    {home !== true && (
+      <p>
+        <a href="/">&larr; back to home</a>
+      </p>
+    )}
+  </header>
+
+  <slot />
+
+  <footer class="footer">
+    <a href="https://www.netlify.com/?utm_source=github&utm_medium=feature-tour-repo&utm_campaign=devex-jl">
+      created with
+      <span class="heart" role="img" aria-label="love">
+        <img
+          src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_50/v1596146333/netlify/netliheart.png"
+          alt="a heart with the Netlify logo pattern in it"
+        />
+      </span>
+      by the Netlify team
+    </a>
+  </footer>
+
+</body>
+</html>
