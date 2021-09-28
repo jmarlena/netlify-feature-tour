@@ -4,7 +4,7 @@ import Layout from '../components/layout.astro';
 import FunctionTester from '../components/function-tester.jsx';
 
 const functionCode = `
-exports.handler = () => {
+exports.handler = async () => {
   return {
     statusCode: 200,
     body: 'hello world!',
