@@ -21,7 +21,7 @@ Deploy your own version of this example site by selecting the Deploy to Netlify 
 - Create an automated deployment pipeline to watch for changes on your repo
 - Build and deploy your new site
 
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/feature-tour&utm_medium=social&utm_source=github&utm_campaign=devex-ph&utm_content=devex-examples)
+[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-feature-tour&utm_medium=social&utm_source=github&utm_campaign=devex-ph&utm_content=devex-examples)
 
 ## Install and run this example locally
 
